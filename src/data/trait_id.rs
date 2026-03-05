@@ -6,7 +6,6 @@ use thiserror::Error;
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Deserialize)]
 pub enum TraitId {
     Retaliates,
-    ConvertOnHit,
     PoisonOnHit,
     FreezeOnHit,
     NoRetaliationTaken,
@@ -19,7 +18,6 @@ impl FromStr for TraitId {
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         match s {
             "Retaliates" => Ok(Self::Retaliates),
-            "ConvertOnHit" => Ok(Self::ConvertOnHit),
             "PoisonOnHit" => Ok(Self::PoisonOnHit),
             "FreezeOnHit" => Ok(Self::FreezeOnHit),
             "NoRetaliationTaken" => Ok(Self::NoRetaliationTaken),
