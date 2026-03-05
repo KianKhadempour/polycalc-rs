@@ -1,4 +1,4 @@
 pub mod loader;
-mod stats;
-mod trait_id;
-mod unit_definition;
+pub mod stats;
+pub mod trait_id;
+pub mod unit_definition;

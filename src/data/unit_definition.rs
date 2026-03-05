@@ -1,6 +1,6 @@
-use crate::data::trait_id::TraitId;
-use crate::data::stats::Stats;
 use crate::data::loader::UnitId;
+use crate::data::stats::Stats;
+use crate::data::trait_id::TraitId;
 
 use smallvec::SmallVec;
 

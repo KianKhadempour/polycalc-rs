@@ -1,287 +1,287 @@
 [Archer]
-attack = 20
+attack = 2000
 cost = 3
-defense = 10
-hp = 100
+defense = 1000
+hp = 10000
 range = 2
 traits = ["Retaliates"]
 
 [BabyDragon]
-attack = 30
+attack = 3000
 cost = 10
-defense = 30
-hp = 150
+defense = 3000
+hp = 15000
 range = 1
 traits = ["Retaliates"]
 
 [BattleSled]
-attack = 30
+attack = 3000
 cost = 5
-defense = 20
-hp = 150
+defense = 2000
+hp = 15000
 range = 1
 traits = ["Retaliates"]
 
 [Catapult]
-attack = 40
+attack = 4000
 cost = 8
 defense = 0
-hp = 100
+hp = 10000
 range = 3
 traits = []
 
 [Centipede]
-attack = 40
+attack = 4000
 cost = 10
-defense = 30
-hp = 200
+defense = 3000
+hp = 20000
 range = 1
 traits = ["Retaliates"]
 
 [Cloak]
-attack = 20
+attack = 2000
 cost = 8
-defense = 5
-hp = 50
+defense = 500
+hp = 5000
 range = 1
 traits = []
 
 [Crab]
-attack = 40
+attack = 4000
 cost = 10
-defense = 40
-hp = 400
+defense = 4000
+hp = 40000
 range = 1
 traits = ["Retaliates"]
 
 [Dagger]
-attack = 20
+attack = 2000
 cost = 2
-defense = 20
-hp = 100
+defense = 2000
+hp = 10000
 range = 1
 traits = ["Retaliates", "NoRetaliationTaken"]
 
 [Defender]
-attack = 10
+attack = 1000
 cost = 3
-defense = 30
-hp = 150
+defense = 3000
+hp = 15000
 range = 1
 traits = ["Retaliates"]
 
 [Doomux]
-attack = 40
+attack = 4000
 cost = 10
-defense = 20
-hp = 200
+defense = 2000
+hp = 20000
 range = 1
 traits = ["Retaliates"]
 
 [Egg]
 attack = 0
 cost = 10
-defense = 20
-hp = 100
+defense = 2000
+hp = 10000
 range = 1
 traits = []
 
 [Exida]
-attack = 30
+attack = 3000
 cost = 8
-defense = 10
-hp = 100
+defense = 1000
+hp = 10000
 range = 3
 traits = ["Retaliates", "PoisonOnHit"]
 
 [FireDragon]
-attack = 40
+attack = 4000
 cost = 10
-defense = 30
-hp = 200
+defense = 3000
+hp = 20000
 range = 2
 traits = ["Retaliates"]
 
 [Gaami]
-attack = 40
+attack = 4000
 cost = 10
-defense = 30
-hp = 300
+defense = 3000
+hp = 30000
 range = 1
 traits = ["Retaliates"]
 
 [Giant]
-attack = 50
+attack = 5000
 cost = 10
-defense = 40
-hp = 400
+defense = 4000
+hp = 40000
 range = 1
 traits = ["Retaliates"]
 
 [Hexapod]
-attack = 30
+attack = 3000
 cost = 3
-defense = 10
-hp = 50
+defense = 1000
+hp = 5000
 range = 1
 traits = ["Retaliates"]
 
 [IceArcher]
 attack = 0
 cost = 3
-defense = 10
-hp = 100
+defense = 1000
+hp = 10000
 range = 2
 traits = ["FreezeOnHit"]
 
 [IceFortress]
-attack = 40
+attack = 4000
 cost = 15
-defense = 30
-hp = 200
+defense = 3000
+hp = 20000
 range = 2
 traits = ["Retaliates"]
 
 [Jelly]
-attack = 20
+attack = 2000
 cost = 8
-defense = 20
-hp = 200
+defense = 2000
+hp = 20000
 range = 1
 traits = ["PreemptiveRetaliation"]
 
 [Juggernaut]
-attack = 40
+attack = 4000
 cost = 10
-defense = 40
-hp = 400
+defense = 4000
+hp = 40000
 range = 1
 traits = []
 
 [Kiton]
-attack = 10
+attack = 1000
 cost = 3
-defense = 30
-hp = 150
+defense = 3000
+hp = 15000
 range = 1
 traits = ["Retaliates", "PoisonOnHit"]
 
 [Knight]
-attack = 35
+attack = 3500
 cost = 8
-defense = 10
-hp = 100
+defense = 1000
+hp = 10000
 range = 1
 traits = ["Retaliates"]
 
 [MindBender]
 attack = 0
 cost = 5
-defense = 10
-hp = 100
+defense = 1000
+hp = 10000
 range = 1
 traits = ["ConvertOnHit"]
 
 [Mooni]
 attack = 0
 cost = 5
-defense = 10
-hp = 100
+defense = 1000
+hp = 10000
 range = 1
 traits = []
 
 [Phychi]
-attack = 7
+attack = 700
 cost = 3
-defense = 10
-hp = 50
+defense = 1000
+hp = 5000
 range = 2
 traits = ["Retaliates", "NoRetaliationTaken", "PoisonOnHit"]
 
 [Pirate]
-attack = 20
+attack = 2000
 cost = 2
-defense = 10
-hp = 100
+defense = 1000
+hp = 10000
 range = 1
 traits = ["Retaliates", "NoRetaliationTaken"]
 
 [Polytaur]
-attack = 30
+attack = 3000
 cost = 3
-defense = 10
-hp = 150
+defense = 1000
+hp = 15000
 range = 1
 traits = ["Retaliates"]
 
 [Puffer]
-attack = 40
+attack = 4000
 cost = 8
 defense = 0
-hp = 100
+hp = 10000
 range = 3
 traits = ["Retaliates"]
 
 [Raychi]
-attack = 30
+attack = 3000
 cost = 8
-defense = 20
-hp = 150
+defense = 2000
+hp = 15000
 range = 1
 traits = ["Retaliates"]
 
 [Rider]
-attack = 20
+attack = 2000
 cost = 3
-defense = 10
-hp = 100
+defense = 1000
+hp = 10000
 range = 1
 traits = ["Retaliates"]
 
 [Segment]
-attack = 20
+attack = 2000
 cost = 1
-defense = 15
-hp = 100
+defense = 1500
+hp = 10000
 range = 1
 traits = []
 
 [Shaman]
-attack = 10
+attack = 1000
 cost = 5
-defense = 10
-hp = 100
+defense = 1000
+hp = 10000
 range = 1
 traits = ["Retaliates", "ConvertOnHit"]
 
 [Shark]
-attack = 35
+attack = 3500
 cost = 8
-defense = 20
-hp = 100
+defense = 2000
+hp = 10000
 range = 1
 traits = ["Retaliates", "NoRetaliationTaken"]
 
 [Swordsman]
-attack = 30
+attack = 3000
 cost = 5
-defense = 30
-hp = 150
+defense = 3000
+hp = 15000
 range = 1
 traits = ["Retaliates"]
 
 [Tridention]
-attack = 25
+attack = 2500
 cost = 8
-defense = 10
-hp = 100
+defense = 1000
+hp = 10000
 range = 2
 traits = ["Retaliates"]
 
 [Warrior]
-attack = 20
+attack = 2000
 cost = 2
-defense = 20
-hp = 100
+defense = 2000
+hp = 10000
 range = 1
 traits = ["Retaliates"]

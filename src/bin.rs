@@ -5,5 +5,5 @@ fn main() {
 
     let unit_registry = loader.load();
 
-    dbg!(&unit_registry.definitions[0]);
+    dbg!(unit_registry.name_to_id);
 }

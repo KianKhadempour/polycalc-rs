@@ -24,7 +24,9 @@ impl FromStr for TraitId {
             "FreezeOnHit" => Ok(Self::FreezeOnHit),
             "NoRetaliationTaken" => Ok(Self::NoRetaliationTaken),
             "PreemptiveRetaliation" => Ok(Self::PreemptiveRetaliation),
-            _ => Err(ParseTraitError { value: s.to_owned() }),
+            _ => Err(ParseTraitError {
+                value: s.to_owned(),
+            }),
         }
     }
 }
