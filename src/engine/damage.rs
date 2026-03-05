@@ -1,29 +1,25 @@
-use crate::{data::unit_definition::UnitDefinition, state::unit_instance::UnitInstance};
-
 pub fn calculate_damage(
-    attacker: &UnitInstance,
-    defender: &UnitInstance,
-    attacker_unit: &UnitDefinition,
-    defender_unit: &UnitDefinition,
+    attacker_hp: i64,
+    attacker_max_hp: i64,
+    defender_hp: i64,
+    defender_max_hp: i64,
+    attack: i64,
+    defense: i64,
+    defense_bonus: i64,
 ) -> CombatResult {
-    let attacker_force =
-        attacker_unit.stats.attack * attacker.hp * 1000 / attacker_unit.stats.max_hp; // 1milx
-    let defender_force = defender_unit.stats.defense  // 1000x
-        * defender.hp                                      // 1milx
-        * defender.statuses.defense_bonus()                // 1bilx
-        / defender_unit.stats.max_hp; // 1milx
+    let attacker_force = attack * attacker_hp * 1000 / attacker_max_hp; // 1milx
+    let defender_force = defense                                        // 1000x
+        * defender_hp                                                   // 1milx
+        * defense_bonus                                                 // 1bilx
+        / defender_max_hp; // 1milx
 
     let total_damage = attacker_force + defender_force; // 1milx
 
     // rounded
-    let damage_to_attacker = (defender_force * defender_unit.stats.defense * 45 / 10000
-        + (total_damage / 2))
-        / total_damage
-        * 1000;
-    let damage_to_defender = (attacker_force * attacker_unit.stats.attack * 45 / 10000
-        + (total_damage / 2))
-        / total_damage
-        * 1000;
+    let damage_to_attacker =
+        (defender_force * defense * 45 / 10000 + (total_damage / 2)) / total_damage * 1000;
+    let damage_to_defender =
+        (attacker_force * attack * 45 / 10000 + (total_damage / 2)) / total_damage * 1000;
 
     CombatResult {
         damage_to_attacker,
@@ -42,7 +38,7 @@ mod tests {
     use super::*;
     use crate::{
         data::loader::{Loader, UnitRegistry},
-        state::status_effect::StatusFlags,
+        state::{status_effect::StatusFlags, unit_instance::UnitInstance},
     };
     use std::sync::OnceLock;
 
@@ -84,7 +80,15 @@ mod tests {
                 let attacker_unit = &registry.definitions[attacker.unit_id.0];
                 let defender_unit = &registry.definitions[defender.unit_id.0];
                 assert_eq!(
-                    calculate_damage(&attacker, &defender, attacker_unit, defender_unit),
+                    calculate_damage(
+                        $att_hp,
+                        attacker_unit.stats.max_hp,
+                        $def_hp,
+                        defender_unit.stats.max_hp,
+                        attacker_unit.stats.attack,
+                        defender_unit.stats.defense,
+                        defender.statuses.defense_bonus(),
+                    ),
                     cr($exp_att_dmg, $exp_def_dmg),
                     "Failed on {} ({} HP) attacking {} ({} HP)",
                     $att_name,
@@ -123,7 +127,15 @@ mod tests {
         let attacker_unit = &registry.definitions[attacker.unit_id.0];
         let defender_unit = &registry.definitions[defender.unit_id.0];
 
-        let result = calculate_damage(&attacker, &defender, attacker_unit, defender_unit);
+        let result = calculate_damage(
+            attacker.hp,
+            attacker_unit.stats.max_hp,
+            defender.hp,
+            defender_unit.stats.max_hp,
+            attacker_unit.stats.attack,
+            defender_unit.stats.defense,
+            defender.statuses.defense_bonus(),
+        );
 
         assert_eq!(result, cr(5, 4));
     }

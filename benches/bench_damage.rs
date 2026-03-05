@@ -18,13 +18,24 @@ pub fn criterion_benchmark(c: &mut Criterion) {
             let attacker_unit = &registry.definitions[attacker.unit_id.0];
             let defender_unit = &registry.definitions[defender.unit_id.0];
 
+            let att_hp = attacker.hp;
+            let att_max_hp = attacker_unit.stats.max_hp;
+            let def_hp = defender.hp;
+            let def_max_hp = defender_unit.stats.max_hp;
+            let attack = attacker_unit.stats.attack;
+            let defense = defender_unit.stats.defense;
+            let defense_bonus = defender.statuses.defense_bonus();
+
             c.bench_function($bench_name, |b| {
                 b.iter(|| {
                     calculate_damage(
-                        black_box(&attacker),
-                        black_box(&defender),
-                        black_box(attacker_unit),
-                        black_box(defender_unit),
+                        black_box(att_hp),
+                        black_box(att_max_hp),
+                        black_box(def_hp),
+                        black_box(def_max_hp),
+                        black_box(attack),
+                        black_box(defense),
+                        black_box(defense_bonus),
                     )
                 });
             });
@@ -32,21 +43,21 @@ pub fn criterion_benchmark(c: &mut Criterion) {
     }
 
     macro_rules! bench_damage {
-        ($bench_name:expr, $att_name:expr, $att_hp:expr, $def_name:expr, $def_hp:expr) => {
+        ($bench_name:expr, $att_name:expr, $def_name:expr) => {
             bench_damage_s!(
                 $bench_name,
                 $att_name,
-                $att_hp,
+                10,
                 StatusFlags::empty(),
                 $def_name,
-                $def_hp,
+                10,
                 StatusFlags::empty()
             );
         };
     }
 
-    bench_damage!("wa wa", "Warrior", 10, "Warrior", 10);
-    bench_damage!("wa ar", "Warrior", 10, "Archer", 10);
+    bench_damage!("wa wa", "Warrior", "Warrior");
+    bench_damage!("wa ar", "Warrior", "Archer");
     bench_damage_s!(
         "wa wa d",
         "Warrior",
