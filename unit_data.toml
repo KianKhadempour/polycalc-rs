@@ -180,7 +180,7 @@ cost = 5
 defense = 1000
 hp = 10000
 range = 1
-traits = ["ConvertOnHit"]
+traits = []
 
 [Mooni]
 attack = 0
@@ -252,7 +252,7 @@ cost = 5
 defense = 1000
 hp = 10000
 range = 1
-traits = ["Retaliates", "ConvertOnHit"]
+traits = ["Retaliates"]
 
 [Shark]
 attack = 3500
